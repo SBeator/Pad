@@ -1,5 +1,8 @@
 var app = require('express');
+var express = require('express');
 var shortid = require('shortid');
+var path = require('path');
+
 var router = app.Router();
 
 module.exports = function(io) {
@@ -76,6 +79,8 @@ module.exports = function(io) {
       id: sid,
     });
   });
+
+  router.use(express.static(path.join(__dirname, '../public')));
 
   return router;
 };
