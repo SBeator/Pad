@@ -8,7 +8,7 @@ var socketio = require('socket.io');
 
 var app = express();
 var io = socketio();
-app.io = io;
+app.io = io.of('/pad');
 
 var index = require('./routes/index');
 var socket = require('./routes/socket')(io);
