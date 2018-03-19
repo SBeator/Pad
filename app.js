@@ -8,10 +8,10 @@ var socketio = require('socket.io');
 
 var app = express();
 var io = socketio();
-app.io = io.of('/pad');
+app.io = io;
 
 var index = require('./routes/index');
-var socket = require('./routes/socket')(io);
+var socket = require('./routes/socket')(io.of('/pad'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
