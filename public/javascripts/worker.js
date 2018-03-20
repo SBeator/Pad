@@ -1,4 +1,6 @@
-var socket = io('/pad');
+var socket = io({
+  path: '/pad-socket',
+});
 var cache = '';
 var firstLoad = true;
 

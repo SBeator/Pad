@@ -7,11 +7,13 @@ var bodyParser = require('body-parser');
 var socketio = require('socket.io');
 
 var app = express();
-var io = socketio();
+var io = socketio({
+  path: '/pad-socket',
+});
 app.io = io;
 
 var index = require('./routes/index');
-var socket = require('./routes/socket')(io.of('/pad'));
+var socket = require('./routes/socket')(io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
