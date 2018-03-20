@@ -8,7 +8,7 @@ var socketio = require('socket.io');
 
 var app = express();
 var io = socketio({
-  path: '/pad-socket',
+  path: '/pad',
 });
 app.io = io;
 
